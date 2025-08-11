@@ -1,5 +1,4 @@
 import { MdLocationPin } from "react-icons/md"
-import { Link } from "react-router-dom"
 import classes from "./User.module.css"
 
 import type { UserProps } from "../types/user"
@@ -26,7 +25,14 @@ const User = ({avatar_url, login, location, followers, following}: UserProps) =>
           <p className={classes.number}>{following}</p>
         </div>
       </div>
-      <Link to={`/repos/${login}`}>Ver melhores projetos</Link>
+      <a
+        href={`https://github.com/${login}?tab=repositories`}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={classes.link}
+      >
+        Ver melhores projetos
+      </a>
     </div>
   )
 }
